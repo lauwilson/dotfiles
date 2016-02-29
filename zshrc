@@ -62,7 +62,7 @@ ZSH_HIGHLIGHT_STYLES[command]='fg=green'
 
 # User configuration
 
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/MAMP/Library/bin:/usr/texbin
+#export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/MAMP/Library/bin:/usr/texbin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
