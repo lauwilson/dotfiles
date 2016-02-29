@@ -1,0 +1,5 @@
+brew "vim"
+brew "git"
+brew "zsh"
+brew "node"
+brew "ctags"
