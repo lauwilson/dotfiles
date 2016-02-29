@@ -76,16 +76,17 @@ set tabstop=4    " Sets the Tab size
 set shiftwidth=4 " Sets the indent level
 set autoindent   " Enable auto-indent
 set cindent      " Sets auto-indent rules to C-like indentation
+set backspace=indent,eol,start  " Enables normal editor backspace behavior
 set t_Co=256     " Enable 256 colors in terminal (if supported)
 
 let g:airline_powerline_fonts = 1 " Enables powerline fonts in Terminal VIM
 
 " [THEME SETTINGS]
-set background=dark
-let g:solarized_visibility = "high"
-let g:solarized_contract = "high"
+"set background=dark
+"let g:solarized_visibility = "high"
+"let g:solarized_contract = "high"
 let g:solarized_termcolors = 256
-colorscheme solarized
+colorscheme jellybeans 
 
 " [CUSTOM KEYBINDS]
 inoremap <C-h> <left>
