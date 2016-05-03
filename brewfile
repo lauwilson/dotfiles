@@ -1,4 +1,5 @@
 brew "vim"
+brew "macvim"
 brew "git"
 brew "zsh"
 brew "node"
