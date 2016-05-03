@@ -32,16 +32,24 @@ call vundle#begin()
     " Avoid a name conflict with L9
     " Plugin 'user/L9', {'name': 'newL9'}
     
-    " [INSTALLED PLUGINS]
-
+    " [THEMES]
     " Solarized Theme
     Plugin 'altercation/vim-colors-solarized'
+
+    " Vim-Kolor
+    Plugin 'zeis/vim-kolor'
+
+    " Base-16
+    Plugin 'chriskempson/base16-vim'
+    
+    " [INSTALLED PLUGINS]
 
     " NERDTree
     Plugin 'scrooloose/nerdtree'
 
     " Airline
-    Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
 
     "Powerline font 
     Plugin 'kien/ctrlp.vim'
@@ -77,16 +85,37 @@ set shiftwidth=4 " Sets the indent level
 set autoindent   " Enable auto-indent
 set cindent      " Sets auto-indent rules to C-like indentation
 set backspace=indent,eol,start  " Enables normal editor backspace behavior
-set t_Co=256     " Enable 256 colors in terminal (if supported)
+"let &t_Co=256     " Enable 256 colors in terminal (if supported)
+set t_Co=256
 
 let g:airline_powerline_fonts = 1 " Enables powerline fonts in Terminal VIM
 
+
 " [THEME SETTINGS]
-"set background=dark
-"let g:solarized_visibility = "high"
-"let g:solarized_contract = "high"
-let g:solarized_termcolors = 256
-colorscheme jellybeans 
+
+set background=dark
+
+"" IMPORTANT: Uncomment one of the following lines to force
+"" using 256 colors (or 88 colors) if your terminal supports it,
+"" but does not automatically use 256 colors by default.
+"" set t_Co=88
+"if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+"    \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+"    " Use the guicolorscheme plugin to makes 256-color or 88-color
+"    " terminal use GUI colors rather than cterm colors.
+"    runtime! plugin/guicolorscheme.vim
+"    GuiColorScheme base16-ocean
+"else
+"    " For 8-color 16-color terminals or for gvim, just use the
+"    " regular :colorscheme command.
+"    colorscheme base16-ocean
+"endif
+
+"let g:solarized_termcolors=256
+"let g:solarized_visibility="high"
+"let g:solarized_contrast="high"
+let base16colorspace=256
+colorscheme base16-default
 
 " [CUSTOM KEYBINDS]
 inoremap <C-h> <left>
@@ -103,8 +132,40 @@ noremap <C-;> <C-w>=
 
 noremap <F1> :tabprevious<CR>
 noremap <F2> :tab<CR>
+
 " [PLUGIN SETTINGS] Airline
 set laststatus=2
+let g:airline_theme='base16'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " [PLUGIN SETTINGS] NERDTree
 noremap :nt :NERDTreeToggle
+
+" [PLUGIN SETTINGS] YouCompleteMe
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
