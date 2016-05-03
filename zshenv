@@ -1,7 +1,7 @@
 # ensure dotfiles bin directory is loaded first
 PATH="/usr/local/bin:$PATH"
 PATH="$PATH:/Users/wilson/Library/Android/sdk/tools"
-PATH="$PATH:/Users/wilson/anaconda/bin"
+#PATH="$PATH:/Users/wilson/anaconda/bin"
 PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export PATH
 
