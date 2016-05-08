@@ -1,0 +1,7 @@
+#/bin/sh
+# Opens all files in MacVim within one window using vsplits
+# instead of tabs or new windows.
+for i in $*
+do
+    mvim --remote-send ":vsplit `pwd`/$i<CR>"
+done

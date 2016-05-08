@@ -169,3 +169,4 @@ noremap :nt :NERDTreeToggle
 
 " [PLUGIN SETTINGS] YouCompleteMe
 let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
