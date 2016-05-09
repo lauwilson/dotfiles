@@ -6,6 +6,7 @@
 
 ########## Variables
 
+
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
 #files="bashrc vimrc vim zshenv zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
@@ -32,4 +33,18 @@ for file in $files; do
     echo "Symbolic linking ~/.$file to ~/.dotfiles/$file"
     ln -sFfh $dir/$file ~/.$file
 done
+printf "...done\n\n"
+
+# setup neovim configurations
+printf "Setting up neovim\n"
+
+if [[ ! -d "$HOME/.config" ]]; then
+    echo "~/.config doesnt exist, creating dir"
+    mkdir -p $HOME/.config
+fi
+# link the necessary config files
+echo "Symbolic linking ~/.config/nvim to ~/.dotfiles/vim"
+ln -sFfh $dir/vim $HOME/.config/nvim
+echo "Symbolic linking ~/.dotfiles/vim/init.vim to ~/.dotfiles/nvimrc"
+ln -sFfh $dir/nvimrc $HOME/.config/nvim/init.vim
 printf "...done\n"
