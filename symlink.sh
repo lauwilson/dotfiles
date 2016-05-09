@@ -15,17 +15,21 @@ files="vimrc vim zshenv zshrc oh-my-zsh"    # temp list of files/folders to syml
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
-echo "...done"
+printf "...done\n\n"
 
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
-echo "...done"
+printf "...done\n\n"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
+    echo "Moving ~/.$file into $olddir"
     mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
 done
+printf "...done\n\n"
+for file in $files; do
+    echo "Symbolic linking ~/.$file to ~/.dotfiles/$file"
+    ln -sFfh $dir/$file ~/.$file
+done
+printf "...done\n"
