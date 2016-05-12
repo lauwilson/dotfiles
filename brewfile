@@ -1,3 +1,4 @@
+brew "python3"
 brew "vim"
 brew "macvim"
 brew "neovim"
