@@ -16,3 +16,7 @@ brew bundle
 4. Run symlink script
 
 bash symlink.sh
+
+Python3 Support for NeoVim
+--------------------------
+1. Run 'pip3 install neovim'
