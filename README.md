@@ -13,9 +13,9 @@ brew tap homebrew/brewfile
 
 brew bundle
 
-4. Run symlink script
+4. Run setup script
 
-bash symlink.sh
+sh symlink.sh
 
 Python3 Support for NeoVim
 --------------------------
