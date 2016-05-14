@@ -13,9 +13,11 @@ export PATH
 
 #export PATH="/usr/local/bin:$PATH:/Library/android/sdk/tools"
 #export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/MAMP/Library/bin:/usr/texbin"
-#
+
 # load rbenv if available
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
   fi
 
+# homebrew
+export HOMEBREW_GITHUB_API_TOKEN=$(echo YzZhNzQyNDljNDZiN2VhYTU5ODkwYmE2Njc1MjgzMWUwYzVkODc4ZQo= | base64 -D)
