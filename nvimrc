@@ -47,6 +47,10 @@
     colorscheme base16-default
 
 " [CUSTOM KEYBINDS]
+    " Fix for xterm-256color terminal info processing Ctrl+H as Backspace
+    nmap <BS> <C-W>h
+    
+    " Map Leader key to Space
     map <Space> \
 
     inoremap <C-h> <left>
