@@ -123,8 +123,29 @@
         \ 'text': '>>',
         \ 'texthl': 'Neomake_Error'
         \ }
-
+    
+    " Auto-Make on write
     autocmd! BufWritePost * Neomake
+
+    " C++ Maker
+    let g:neomake_cpp_gcc_maker = {
+        \ 'args': ['-fsyntax-only', '-W', '-Wall', '-Wextra', '-Wpedantic'],
+        \ 'exe' : 'g++-6',
+        \ 'errorformat':
+            \ '%-G%f:%s:,' .
+            \ '%-G%f:%l: %#error: %#(Each undeclared identifier is reported only%.%#,' .
+            \ '%-G%f:%l: %#error: %#for each function it appears%.%#,' .
+            \ '%-GIn file included%.%#,' .
+            \ '%-G %#from %f:%l\,,' .
+            \ '%f:%l:%c: %trror: %m,' .
+            \ '%f:%l:%c: %tarning: %m,' .
+            \ '%f:%l:%c: %m,' .
+            \ '%f:%l: %trror: %m,' .
+            \ '%f:%l: %tarning: %m,'.
+            \ '%f:%l: %m',
+        \ }
+
+    let g:neomake_cpp_enabled_makers = ['gcc']
 
 " [PLUGIN SETTINGS] vim-togglelist
     "let g:toggle_list_no_mappings = 1
