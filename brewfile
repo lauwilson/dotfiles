@@ -5,4 +5,6 @@ brew "neovim"
 brew "git"
 brew "zsh"
 brew "node"
-brew "ctags"
+
+tap "universal-ctags/universal-ctags"
+brew "universal-ctags"
