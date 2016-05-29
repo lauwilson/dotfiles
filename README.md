@@ -17,6 +17,10 @@ brew bundle
 
 sh symlink.sh
 
+5. If you are on El Captian or greater... comment out the code in /etc/zprofile
+
+sudo vim /etc/zprofile
+
 Python3 Support for NeoVim
 --------------------------
 1. Run 'pip3 install neovim'

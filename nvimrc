@@ -69,6 +69,14 @@
     noremap <F2> :tab<CR>
     noremap <Leader>` :lopen<CR>
 
+    " Split Resizing
+    noremap <Leader>] :5winc ><CR>
+    noremap <Leader>[ :5winc <<CR>
+
+    " Easier clipboard managmenet
+    noremap <Leader>y "+y<CR>
+    noremap <Leader>p "+p
+
 " [PLUGIN SETTINGS] Airline
     set laststatus=2
     let g:airline_theme='base16'
