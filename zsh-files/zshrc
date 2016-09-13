@@ -9,7 +9,7 @@ BASE16_SHELL="$HOME/.dotfiles/base16/base16-default-custom.dark.sh"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="clean_custom"
+ZSH_THEME="../../.dotfiles/zsh-files/clean_custom"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -56,13 +56,13 @@ source $ZSH/oh-my-zsh.sh
 # Plugin Configurations
 
 # zsh-syntax-highlighting Settings
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=green'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 ZSH_HIGHLIGHT_STYLES[command]='fg=green'
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # User configuration
 

@@ -23,12 +23,14 @@
 
          " Quickfix Toggler
          Plug 'milkypostman/vim-togglelist'
+
     call plug#end()
 
 " [GENERAL SETTINGS]
     syntax on
     set showcmd      " Shows the vim command as you are typing it
-    set number       " Displays line numbers
+    set relativenumber " Displays relative line numbers
+    set number       " Enables absolute line number for selected line
     set expandtab    " Converts Tabs to Spaces
     set tabstop=4    " Sets the Tab size
     set shiftwidth=4 " Sets the indent level
@@ -45,6 +47,8 @@
     set background=dark
     let base16colorspace=256
     colorscheme base16-default
+
+    hi CursorLineNr ctermfg=5
 
 " [CUSTOM KEYBINDS]
     " Fix for xterm-256color terminal info processing Ctrl+H as Backspace
