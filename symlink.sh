@@ -2,6 +2,8 @@
 ############################
 # symlink.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+
+# Reminder: ln -s 'REAL PATH" "PATH OF S-LINK"
 ############################
 
 ########## Variables
@@ -14,6 +16,9 @@ files="vimrc vim"    # temp list of files/folders to symlink in homedir
 zshfiles="zshenv zshrc"
 ##########
 
+# ===============================
+# BACKUP FILES
+# ===============================
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
@@ -39,13 +44,19 @@ for file in $zshfiles; do
 done
 printf "...done\n\n"
 
-printf "[ Symlink dotfiles ]\n"
+# ===============================
+# VIM
+# ===============================
+printf "[ Symlink VIM dotfiles ]\n"
 for file in $files; do
     echo "Symbolic linking ~/.$file to ~/.dotfiles/$file"
     ln -sFfh $dir/$file ~/.$file
 done
 printf "...done\n\n"
 
+# ===============================
+# OH-MY-ZSH
+# ===============================
 printf "[ Symlink zsh dotfiles ]\n"
 for file in $zshfiles; do
     echo "Symbolic linking ~/.$file to ~/.dotfiles/zsh-files/$file"
@@ -53,7 +64,9 @@ for file in $zshfiles; do
 done
 printf "...done\n\n"
 
-# setup neovim configurations
+# ===============================
+# NEOVIM
+# ===============================
 printf "[ Setting up neovim ]\n"
 
 if [[ ! -d "$HOME/.config" ]]; then
@@ -72,5 +85,22 @@ ln -sFfh $dir/zsh-files/alias.zsh $HOME/.oh-my-zsh/custom/alias.zsh
 
 echo "Symbolic linking ~/.dotfiles/zsh-files/clean_custom.zsh-theme to ~/.oh-my-zsh/themes/clean_custom.zsh-theme"
 ln -sFfh $dir/zsh-files/clean_custom.zsh-theme $HOME/.oh-my-zsh/themes/clean_custom.zsh-theme
+
+printf "...done\n\n"
+
+# ===============================
+# ATOM
+# ===============================
+printf "[ Setting up Atom ]\n"
+if [[ ! -d "$HOME/.atom" ]]; then
+    echo "~/.atom doesnt exist, creating dir"
+    mkdir -p $HOME/.atom
+fi
+
+for file in ~/.dotfiles/atom-files/*; do
+    filename=${file##*/}
+    echo "Symbolic linking ~/.dotfiles/atom-files/$filename -----> ~/.atom/$filename"
+    ln -sFfh $dir/atom-files/$filename $HOME/.atom/$filename
+done
 
 printf "...done\n"

@@ -1,0 +1,55 @@
+# Your keymap
+
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'atom-text-editor':
+  'ctrl-k': 'unset!'
+  'ctrl-\'': 'tree-view:toggle-focus'
+  'cmd-l': 'unset!'
+
+'body':
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
+  #'cmd-h': 'unset!'
+  'cmd-h': 'pane:show-previous-item'
+  'cmd-l': 'pane:show-next-item'
+
+'.fuzzy-finder':
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+
+'.command-palette':
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+
+'.tree-view':
+  's': 'tree-view:open-selected-entry-right'

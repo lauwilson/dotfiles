@@ -1,0 +1,27 @@
+"*":
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "base16-ocean-dark-syntax-theme"
+    ]
+  editor:
+    fontSize: 13
+    showIndentGuide: true
+    tabLength: 4
+  "ex-mode": {}
+  "exception-reporting":
+    userId: "7f53c4d8-b52d-9820-33c5-55ea80ec401c"
+  react:
+    enabledForAllJavascriptFiles: true
+  "relative-numbers": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+".coffee.jsx.source":
+  editor:
+    tabLength: 4
+".js.jsx.source":
+  editor:
+    tabLength: 4
