@@ -1,3 +1,4 @@
+# Install Native Brews
 brew "python3"
 brew "vim"
 brew "macvim"
@@ -6,5 +7,20 @@ brew "git"
 brew "zsh"
 brew "node"
 
-tap "universal-ctags/universal-ctags"
-brew "universal-ctags"
+# Install Casks
+tap 'caskroom/cask'
+cask 'atom'
+
+# -----------------------------------
+# Example brew / tap / cask arguments
+# -----------------------------------
+# cask_args appdir: '/Applications'
+# tap 'caskroom/cask'
+# tap 'telemachus/brew', 'https://telemachus@bitbucket.org/telemachus/brew.git'
+# brew 'imagemagick'
+# brew 'mysql', restart_service: true, conflicts_with: ['homebrew/versions/mysql56']
+# brew 'emacs', args: ['with-cocoa', 'with-gnutls']
+# cask 'google-chrome'
+# cask 'java' unless system '/usr/libexec/java_home --failfast'
+# cask 'firefox', args: { appdir: '~/my-apps/Applications' }
+# mas '1Password', id: 443987910
