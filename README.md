@@ -31,7 +31,10 @@ Dotfiles Instructions
 
 Install Atom packages
 ---------------------
-apm install --packages-file ~/.dotfiles/package-list.txt
+   apm install --packages-file ~/.dotfiles/package-list.txt
+
+   **Note: To update package-list.txt:**  
+   apm list --installed --bare > package-list.txt
 
 Python3 Support for NeoVim
 --------------------------
