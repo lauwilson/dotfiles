@@ -29,6 +29,10 @@ Dotfiles Instructions
 
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+Install Atom packages
+---------------------
+apm install --packages-file ~/.dotfiles/package-list.txt
+
 Python3 Support for NeoVim
-==========================
+--------------------------
 1. Run 'pip3 install neovim'
