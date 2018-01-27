@@ -1,0 +1,78 @@
+" [vim_plug PACKAGE MANAGER SETTINGS]
+call plug#begin('$HOME/vim/vimfiles/bundle')
+
+    " [THEMES]
+    " Base-16
+    Plug 'chriskempson/base16-vim'
+
+    " CtrlP
+    Plug 'ctrlpvim/ctrlp.vim'
+
+    " NERDTree
+    Plug 'scrooloose/nerdtree'
+
+    " Airline
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
+" [GENERAL SETTINGS]
+syntax on
+set showcmd      " Shows the vim command as you are typing it
+set number       " Displays line numbers
+set expandtab    " Converts Tabs to Spaces
+set tabstop=4    " Sets the Tab size
+set shiftwidth=4 " Sets the indent level
+set autoindent   " Enable auto-indent
+set cindent      " Sets auto-indent rules to C-like indentation
+set backspace=indent,eol,start  " Enables normal editor backspace behavior
+
+" [gVim Settings]
+if has ('gui_running')
+    set guioptions-=T       " Removes the gui toolbar
+    set guioptions-=r       " Removes the scrollbar
+    set guioptions-=m       " Removes the menu bar
+    colorscheme base16-ocean
+    set lines=70 columns=180 linespace=0
+    set belloff=all
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h10
+    set encoding=utf-8  " Needed for gVim to display special Airline characters
+else
+    set guifont=Source\ Code\ Pro\ for\ Powerline
+endif
+
+" [CUSTOM KEYBINDS]
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-k> <up>
+inoremap <C-l> <right>
+
+" Window navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+noremap <C-;> <C-w>=
+
+noremap <F1> :tabprevious<CR>
+noremap <F2> :tab<CR>
+
+" [THEME SETTINGS]
+colorscheme base16-ocean
+
+" [PLUGIN SETTINGS] NERDTree
+noremap :nt :NERDTreeToggle
+
+" [PLUGIN SETTINGS] Airline
+set laststatus=2
+let g:airline_theme='base16'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled=1
+set noshowmode  " disables the default -- INSERT/VISUAL -- message
+
+" [PLUGIN SETTINGS] CtrlP
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_open_new_file='v'
