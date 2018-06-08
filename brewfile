@@ -1,15 +1,13 @@
 # Install Native Brews
+brew "git"
 brew "python3"
 brew "vim"
-brew "macvim"
-brew "neovim"
-brew "git"
 brew "zsh"
 brew "node"
 
 # Install Casks
-tap 'caskroom/cask'
-cask 'atom'
+tap 'homebrew/cask'
+cask 'iterm2'
 
 # -----------------------------------
 # Example brew / tap / cask arguments

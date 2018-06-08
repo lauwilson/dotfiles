@@ -1,79 +1,27 @@
-" [VUNDLE Package Manager SETTINGS]
+" [vim-plug SETTINGS]
 
-" set the runtime path to include Vundle and initialize
-set nocompatible              " be iMproved, required
-filetype off                  " required for compatibility with old VIM versions
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-    " alternatively, pass a path where Vundle should install plugins
-    "call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-    " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
+" [THEMES]
+Plug 'kaicataldo/material.vim'
+Plug 'w0ng/vim-hybrid'
 
-    " [DEFAULT PLUGINS] (Remove if unwated)
+" [PLUGINS]
 
-    " plugin on GitHub repo
-    " Plugin 'tpope/vim-fugitive'
+" NERDTree
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-    " plugin from http://vim-scripts.org/vim/scripts.html
-    " Plugin 'L9'
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-    " Git plugin not hosted on GitHub
-    " Plugin 'git://git.wincent.com/command-t.git'
+" ctrl-p 
+"Plug '
+"
+" AutoComplete plugin
+" ??????
 
-    " git repos on your local machine (i.e. when working on your own plugin)
-    " Plugin 'file:///home/gmarik/path/to/plugin'
-    "
-    " The sparkup vim script is in a subdirectory of this repo called vim.
-    " Pass the path to set the runtimepath properly.
-    " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-    " Avoid a name conflict with L9
-    " Plugin 'user/L9', {'name': 'newL9'}
-    
-    " [THEMES]
-    " Solarized Theme
-    Plugin 'altercation/vim-colors-solarized'
-
-    " Vim-Kolor
-    Plugin 'zeis/vim-kolor'
-
-    " Base-16
-    Plugin 'chriskempson/base16-vim'
-    
-    " [INSTALLED PLUGINS]
-
-    " NERDTree
-    Plugin 'scrooloose/nerdtree'
-
-    " Airline
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-
-    "Powerline font 
-    Plugin 'kien/ctrlp.vim'
-
-    " YouCompleteMe
-    Plugin 'Valloric/YouCompleteMe'
-
-    " Wakatime
-
-
-    " All of your Plugins must be added before the following line
-    call vundle#end()            " required
-    filetype plugin indent on    " required
-    " To ignore plugin indent changes, instead use:
-    "filetype plugin on
-    "
-    " Brief help
-    " :PluginList       - lists configured plugins
-    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-    "
-    " see :h vundle for more details or wiki for FAQ
-    " Put your non-Plugin stuff after this line
+call plug#end()
 
 " [GENERAL SETTINGS]
 syntax on
@@ -95,6 +43,10 @@ let g:airline_powerline_fonts = 1 " Enables powerline fonts in Terminal VIM
 
 set background=dark
 
+if (has("termguicolors"))
+    set termguicolors
+endif
+
 "" IMPORTANT: Uncomment one of the following lines to force
 "" using 256 colors (or 88 colors) if your terminal supports it,
 "" but does not automatically use 256 colors by default.
@@ -114,8 +66,10 @@ set background=dark
 "let g:solarized_termcolors=256
 "let g:solarized_visibility="high"
 "let g:solarized_contrast="high"
-let base16colorspace=256
-colorscheme base16-default
+"let base16colorspace=256
+"
+"let g:hybrid_custom_term_colors = 1
+colorscheme material
 
 " [CUSTOM KEYBINDS]
 inoremap <C-h> <left>
@@ -135,38 +89,10 @@ noremap <F2> :tab<CR>
 
 " [PLUGIN SETTINGS] Airline
 set laststatus=2
-let g:airline_theme='base16'
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
 
 " [PLUGIN SETTINGS] NERDTree
 noremap :nt :NERDTreeToggle
 
 " [PLUGIN SETTINGS] YouCompleteMe
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
-let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_python_binary_path = '/usr/local/bin/python3'
+"let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'

@@ -67,40 +67,40 @@ printf "...done\n\n"
 # ===============================
 # NEOVIM
 # ===============================
-printf "[ Setting up neovim ]\n"
-
-if [[ ! -d "$HOME/.config" ]]; then
-    echo "~/.config doesnt exist, creating dir"
-    mkdir -p $HOME/.config
-fi
-# link the necessary config files
-echo "Symbolic linking ~/.config/nvim to ~/.dotfiles/vim"
-ln -sFfh $dir/vim $HOME/.config/nvim
-
-echo "Symbolic linking ~/.dotfiles/vim/init.vim to ~/.dotfiles/nvimrc"
-ln -sFfh $dir/nvimrc $HOME/.config/nvim/init.vim
-
-echo "Symbolic linking ~/.dotfiles/zsh-files/alias.zsh to ~/.oh-my-zsh/custom/alias.zsh"
-ln -sFfh $dir/zsh-files/alias.zsh $HOME/.oh-my-zsh/custom/alias.zsh
-
-echo "Symbolic linking ~/.dotfiles/zsh-files/clean_custom.zsh-theme to ~/.oh-my-zsh/themes/clean_custom.zsh-theme"
-ln -sFfh $dir/zsh-files/clean_custom.zsh-theme $HOME/.oh-my-zsh/themes/clean_custom.zsh-theme
-
-printf "...done\n\n"
-
+#printf "[ Setting up neovim ]\n"
+#
+#if [[ ! -d "$HOME/.config" ]]; then
+#    echo "~/.config doesnt exist, creating dir"
+#    mkdir -p $HOME/.config
+#fi
+## link the necessary config files
+#echo "Symbolic linking ~/.config/nvim to ~/.dotfiles/vim"
+#ln -sFfh $dir/vim $HOME/.config/nvim
+#
+#echo "Symbolic linking ~/.dotfiles/vim/init.vim to ~/.dotfiles/nvimrc"
+#ln -sFfh $dir/nvimrc $HOME/.config/nvim/init.vim
+#
+#echo "Symbolic linking ~/.dotfiles/zsh-files/alias.zsh to ~/.oh-my-zsh/custom/alias.zsh"
+#ln -sFfh $dir/zsh-files/alias.zsh $HOME/.oh-my-zsh/custom/alias.zsh
+#
+#echo "Symbolic linking ~/.dotfiles/zsh-files/clean_custom.zsh-theme to ~/.oh-my-zsh/themes/clean_custom.zsh-theme"
+#ln -sFfh $dir/zsh-files/clean_custom.zsh-theme $HOME/.oh-my-zsh/themes/clean_custom.zsh-theme
+#
+#printf "...done\n\n"
+#
 # ===============================
 # ATOM
 # ===============================
-printf "[ Setting up Atom ]\n"
-if [[ ! -d "$HOME/.atom" ]]; then
-    echo "~/.atom doesnt exist, creating dir"
-    mkdir -p $HOME/.atom
-fi
-
-for file in ~/.dotfiles/atom-files/*; do
-    filename=${file##*/}
-    echo "Symbolic linking ~/.dotfiles/atom-files/$filename -----> ~/.atom/$filename"
-    ln -sFfh $dir/atom-files/$filename $HOME/.atom/$filename
+##printf "[ Setting up Atom ]\n"
+#if [[ ! -d "$HOME/.atom" ]]; then
+#    echo "~/.atom doesnt exist, creating dir"
+#    mkdir -p $HOME/.atom
+#fi
+#
+#for file in ~/.dotfiles/atom-files/*; do
+#    filename=${file##*/}
+#    echo "Symbolic linking ~/.dotfiles/atom-files/$filename -----> ~/.atom/$filename"
+#    ln -sFfh $dir/atom-files/$filename $HOME/.atom/$filename
 done
 
 printf "...done\n"
