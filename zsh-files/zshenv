@@ -20,7 +20,7 @@ if which rbenv &>/dev/null ; then
   fi
 
 # homebrew
-export HOMEBREW_GITHUB_API_TOKEN=$(cat ./homebrew_github_api_token)
+export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.homebrew_github_api_token)
 # Android Emulator
 ANDROID_HOME="/Users/wilson/Library/Android/sdk"
 export ANDROID_HOME

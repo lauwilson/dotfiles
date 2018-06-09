@@ -7,7 +7,7 @@ Dotfiles Instructions
 
 **2. Add Homebrew Github API Token**
 
-   touch zsh-files/homebrew_github_api_token
+   touch ~/.homebrew_github_api_token
 
    Login to Github and generate a new API Token.
    Copy the token as the sole contents of the homebrew_github_api_token file.
