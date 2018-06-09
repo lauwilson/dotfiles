@@ -5,30 +5,38 @@ Dotfiles Instructions
 
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-**2. Install Brewfile**
+**2. Add Homebrew Github API Token**
 
-   brew tap homebrew/brewfile
+   touch zsh-files/homebrew_github_api_token
 
-**3. Run Brewfile**
+   Login to Github and generate a new API Token.
+   Copy the token as the sole contents of the homebrew_github_api_token file.
+
+**3. Install Brewfile**
+
+   brewfile is automatically installed with Homebrew now. (6/8/2018)
+
+**4. Run Brewfile**
 
    brew bundle
 
-**4. Run setup script**
+**5. Run setup script**
 
    sh setup.sh
 
-**5. If you are on El Captian or greater... comment out the code in /etc/zprofile**
+**6. If you are on El Captian or greater... comment out the code in /etc/zprofile**
 
    sudo vim /etc/zprofile
 
-**6. Install oh-my-zsh**
+**7. Install oh-my-zsh**
 
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-**7. Install zsh-syntax-highlighting into the .oh-my-zsh/custom/plugins folder**
+**8. Install zsh-syntax-highlighting into the .oh-my-zsh/custom/plugins folder**
 
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+<!---
 Install Atom packages
 ---------------------
    apm install --packages-file ~/.dotfiles/package-list.txt
@@ -39,3 +47,4 @@ Install Atom packages
 Python3 Support for NeoVim
 --------------------------
 1. Run 'pip3 install neovim'
+-->
